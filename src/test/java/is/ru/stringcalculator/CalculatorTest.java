@@ -39,4 +39,14 @@ public class CalculatorTest {
 		Calculator.add("1,-1");
 	}
 	
+	@Test
+	public void testNegativ(){
+		try{
+			Calculator.add("-1,2");
+		}
+		catch(final IllegalArgumentException ex){
+			final String s = "Negativ not allowed: [-1]";
+			assertEquals(s, ex.getMessage());
+		}
+	}
 }
