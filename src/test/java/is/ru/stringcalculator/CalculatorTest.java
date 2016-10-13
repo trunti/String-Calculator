@@ -34,4 +34,9 @@ public class CalculatorTest {
     	assertEquals(3, Calculator.add("1\n2"));
     }
 
+    @Test(expected = IllegalArgumentException.class)
+	public void teststringWithNegativeNumbers(){
+		Calculator.add("1,-1");
+	}
+	
 }
