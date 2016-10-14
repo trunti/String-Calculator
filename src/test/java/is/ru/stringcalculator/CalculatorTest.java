@@ -72,5 +72,11 @@ public class CalculatorTest {
   	@Test
   	public void testNumberOverThusend(){
   		assertEquals(2, Calculator.add("1001,2"));
+
+  	}
+
+  	@Test
+  	public void testNumberEqualsThousund(){
+  		assertEquals(1002, Calculator.add("1000,2"));
   	}
 }
