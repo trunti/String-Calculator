@@ -41,7 +41,7 @@ public class CalculatorTest {
 
     @Test(expected = IllegalArgumentException.class)
 	public void teststringWithNegativeNumbers(){
-		Calculator.add("1,-1");
+		Calculator.add("-1,2");
 	}
 	
 	@Test
@@ -64,8 +64,13 @@ public class CalculatorTest {
  	  }
  	  catch( final IllegalArgumentException ex )
  	  {
- 	    final String s = "Negatives not allowed: [-4,-5]";
+ 	    final String s = "Negativ not allowed: [-4, -5]";
  	    assertEquals(s, ex.getMessage());
   	  }
+  	}
+
+  	@Test
+  	public void testNumberOverThusend(){
+  		assertEquals(2, Calculator.add("1001,2"));
   	}
 }
