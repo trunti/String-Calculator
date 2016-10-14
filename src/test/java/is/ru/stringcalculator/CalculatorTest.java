@@ -34,6 +34,11 @@ public class CalculatorTest {
     	assertEquals(3, Calculator.add("1\n2"));
     }
 
+    @Test
+    public void testNewLineAndComma(){
+    	assertEquals(6, Calculator.add("1\n2,3"));
+    }
+
     @Test(expected = IllegalArgumentException.class)
 	public void teststringWithNegativeNumbers(){
 		Calculator.add("1,-1");
@@ -49,4 +54,18 @@ public class CalculatorTest {
 			assertEquals(s, ex.getMessage());
 		}
 	}
+
+	@Test
+ 	public void TestStringWithManyNegativeNumberMessages()
+ 	{
+ 	  try
+ 	  {
+ 		Calculator.add("2,-4,3,-5");
+ 	  }
+ 	  catch( final IllegalArgumentException ex )
+ 	  {
+ 	    final String s = "Negatives not allowed: [-4,-5]";
+ 	    assertEquals(s, ex.getMessage());
+  	  }
+  	}
 }
