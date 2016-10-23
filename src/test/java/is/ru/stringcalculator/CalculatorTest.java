@@ -79,4 +79,9 @@ public class CalculatorTest {
   	public void testNumberEqualsThousund(){
   		assertEquals(1002, Calculator.add("1000,2"));
   	}
+
+  	@Test
+  	public void testNumberEqualsThousund(){
+  		assertEquals(1003, Calculator.add("1000,3"));
+  	}
 }
